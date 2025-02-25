@@ -20,3 +20,28 @@ struct School
   School(string n, string a, string c, string s, string co) : name (n), address(a), city(c), state(s), county(co), next(nullptr) {}
 };
 
+
+class SchoolList
+{
+  private:
+    School* head;
+
+  public:
+      SchoolList() : head(nullptr) {}
+      void insertFirst(School* school)
+      {
+      }
+      void insertLast(School* school)
+      {
+      }
+      bool deleteByName(string name)
+      {
+      }
+      School* findByName(string name)
+      {
+      }
+      void display()
+      {
+      }
+}
+
