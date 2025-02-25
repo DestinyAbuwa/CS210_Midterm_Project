@@ -43,5 +43,13 @@ class SchoolList
       void display()
       {
       }
+};
+
+void CSVReader()
+{
+}
+
+int main()
+{
 }
 
