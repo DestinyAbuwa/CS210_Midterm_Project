@@ -1,6 +1,6 @@
 # CS210_Midterm_Project
 # Destiny Abuwa
-
+```
 #include <iostream>
 #include <fstream>
 #include <sstream>
@@ -20,7 +20,6 @@ struct School
   School(string n, string a, string c, string s, string co) : name (n), address(a), city(c), state(s), county(co), next(nullptr) {}
 };
 
-
 class SchoolList
 {
   private:
@@ -28,11 +27,13 @@ class SchoolList
 
   public:
       SchoolList() : head(nullptr) {}
+
       void insertFirst(School* school)
       {
         school->next = head;
         head = school;
       }
+
       void insertLast(School* school)
       {
         if(!head)
@@ -49,9 +50,38 @@ class SchoolList
           temp->next = school;
         }
       }
+
       bool deleteByName(string name)
       {
+        School* toDelete = findByName(name);
+        if (toDelete == nullptr)
+        {
+          return false;
+        }
+        else if (toDelete == head)
+        {
+          School* temp = head;
+          head = head->next;
+          delete temp;
+          return true;
+        }
+        else
+        {
+          School* temp = head;
+          while(temp->next != toDelete)
+          {
+            temp = temp->next;
+          }
+          if (temp->next)
+          {
+            temp->next = toDelete->next;
+            delete toDelete;
+            return true;
+          }
+          return false;
+        }
       }
+
       School* findByName(string name)
       {
         School* temp = head;
