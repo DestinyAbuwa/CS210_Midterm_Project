@@ -30,6 +30,8 @@ class SchoolList
       SchoolList() : head(nullptr) {}
       void insertFirst(School* school)
       {
+        school->next = head;
+        head = school;
       }
       void insertLast(School* school)
       {
