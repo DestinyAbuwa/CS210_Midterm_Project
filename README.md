@@ -107,8 +107,32 @@ class SchoolList
       }
 };
 
-void CSVReader()
+void CSVReader(SchoolList& list, const string& filename)
 {
+  ifstream file(filename);
+  if (!file.is_open())
+  {
+    cerr << "Error: Could not open file " << endl;
+    return;
+  }
+  string line;
+  string name;
+  string address;
+  string city;
+  string state;
+  string county;
+
+  while (getline(file, line))
+  {
+    stringstream ss(line);
+    getline(ss, name, ',');
+    getline(ss, address, ',');
+    getline(ss, city, ',');
+    getline(ss, state, ',');
+    getline(ss, county, ',');
+    list.insertLast(new School(name, address, city, state, county));
+  }
+  file.close();
 }
 
 int main()
