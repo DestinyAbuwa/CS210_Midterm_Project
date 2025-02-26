@@ -95,8 +95,15 @@ class SchoolList
         }
         return nullptr;
       }
+
       void display()
       {
+        School* temp = head;
+        while(temp)
+        {
+          cout << temp->name << " - " << temp->address << ", " << temp->city << ", " << temp->state << " (" << temp->county << ")\n";
+          temp = temp->next;
+        }
       }
 };
 
