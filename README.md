@@ -44,7 +44,7 @@ class SchoolList
           School* temp = head;
           while(temp->next)
           {
-            temp = temp->next
+            temp = temp->next;
           }
           temp->next = school;
         }
@@ -54,6 +54,16 @@ class SchoolList
       }
       School* findByName(string name)
       {
+        School* temp = head;
+        while(temp)
+        {
+          if (temp->name == name)
+          {
+            return temp;
+          }
+          temp = temp->next;
+        }
+        return nullptr;
       }
       void display()
       {
