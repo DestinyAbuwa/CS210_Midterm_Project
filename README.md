@@ -35,6 +35,19 @@ class SchoolList
       }
       void insertLast(School* school)
       {
+        if(!head)
+        {
+          head = school;
+        }
+        else
+        {
+          School* temp = head;
+          while(temp->next)
+          {
+            temp = temp->next
+          }
+          temp->next = school;
+        }
       }
       bool deleteByName(string name)
       {
