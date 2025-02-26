@@ -137,5 +137,58 @@ void CSVReader(SchoolList& list, const string& filename)
 
 int main()
 {
+  SchoolList list;
+  CSVReader(list, "Illinois_Peoria_Schools.csv");
+
+  char choice;
+  string name;
+  do
+  {
+    cout << "\nMenu:\na) Display Schools\nb) Search School\nc) Delete School\nd) Exit\nChoice: ";
+    cin >> choice;
+    cin.ignore();
+    switch (choice)
+    {
+      case 'a':
+          list.display();
+      break;
+
+      case 'b':
+        cout << "Enter school name to search: ";
+        getline(cin, name);
+        if (School* school = list.findByName(name))
+        {
+          cout << "Found: " << school->name << " - " << school->address << endl;
+        }
+        else
+        {
+          cout << "School not found!\n";
+        }
+      break;
+
+      case 'c':
+        cout << "Enter school name to delete: ";
+        getline(cin, name);
+        if (list.deleteByName(name))
+        {
+          cout << "School deleted!\n";
+        }
+        else
+        {
+          cout << "School not found!\n";
+        }
+      break;
+
+      case 'd':
+        cout << "Exiting...\n";
+      break;
+
+      default:
+        cout << "Invalid choice!\n";
+    }
+  }
+  while (choice != 'd');
+
+  return 0;
 }
 
