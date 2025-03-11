@@ -28,4 +28,10 @@ struct TreeNode
   TreeNode(School s) : school(s), left(nullptr), right(nullptr) {}
 };
 
+class SchoolBST
+{
+  private:
+  TreeNode* root;
+
+};
 
