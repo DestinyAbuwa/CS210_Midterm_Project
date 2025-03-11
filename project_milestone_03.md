@@ -15,8 +15,10 @@ struct School
   string city;
   string state;
   string county;
-  School* left;
-  School* right;
 
-  School(string n, string a, string c, string s, string co) : name (n), address(a), city(c), state(s), county(co), left(nullptr), right(nullptr) {}
+  School();
+  School(string n, string a, string c, string s, string co) : name (n), address(a), city(c), state(s), county(co){}
 };
+
+
+
