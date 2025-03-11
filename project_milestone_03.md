@@ -101,6 +101,8 @@ class SchoolBST
 
 
   public:
+  SchoolBST() : root(nullptr){};
+
   void insert(School school)
   {
     root = insertNode(root, school);
