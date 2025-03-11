@@ -33,5 +33,22 @@ class SchoolBST
   private:
   TreeNode* root;
 
+  TreeNode* insertNode(TreeNode* node, School school)
+  {
+    if (node == nullptr)
+    {
+      return new TreeNode(school);
+    }
+    if (school.name < node->school.name)
+    {
+      node->left = insertNode(node->left, school);
+    }
+    else
+    {
+      node->right = insertNode(node->right, school);
+    }
+    return node;
+  }
+
 };
 
