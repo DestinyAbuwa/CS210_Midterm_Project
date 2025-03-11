@@ -112,6 +112,30 @@ class SchoolBST
       return findNode(node->right, name);
     }
   }
+  
+  void InOrder(TreeNode* node)
+  {
+    if (!node) return;
+    InOrder(node->left);
+    printSchool(node->school);
+    InOrder(node->right);
+  }
+
+  void PreOrder(TreeNode* node)
+  {
+    if (!node) return;
+    printSchool(node->school);
+    PreOrder(node->left);
+    PreOrder(node->right);
+  }
+
+  void PostOrder(TreeNode* node)
+  {
+    if (!node) return;
+    PostOrder(node->left);
+    PostOrder(node->right);
+    printSchool(node->school);
+  }
 
   public:
   SchoolBST() : root(nullptr){};
@@ -144,6 +168,19 @@ class SchoolBST
     cout << "Name: " << school.name << ", Address: " << school.address
     << ", City: " << school.city << ", State: " << school.state
     << ", County: " << school.county << endl;
+  }
+
+  void displayInOrder()
+  {
+    InOrder(root);
+  }
+  void displayPreOrder()
+  {
+    PreOrder(root);
+  }
+  void displayPostOrder()
+  {
+   PostOrder(root);
   }
 
 };
