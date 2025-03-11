@@ -99,6 +99,19 @@ class SchoolBST
     return node;
   }
 
+  TreeNode* findNode(TreeNode* node, string name)
+  {
+    if (!node || node->school.name == name) return node;
+
+    if (name < node->school.name)
+    {
+      return findNode(node->left, name);
+    }
+    else
+    {
+      return findNode(node->right, name);
+    }
+  }
 
   public:
   SchoolBST() : root(nullptr){};
