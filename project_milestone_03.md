@@ -50,5 +50,13 @@ class SchoolBST
     return node;
   }
 
+  void insert(School school)
+  {
+    root = insertNode(root, school);
+  }
+
+
+
+
 };
 
