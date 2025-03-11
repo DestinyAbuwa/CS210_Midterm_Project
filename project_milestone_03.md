@@ -113,6 +113,19 @@ class SchoolBST
     root = deleteNode(root, name);
   }  
 
+  void findByName(string name)
+  {
+    TreeNode* result = findNode(root, name);
+    if (result)
+    {
+      printSchool(result->school);
+    }
+    else
+    {
+      cout << "School not found.\n";
+    }
+  }
+
   void printSchool(School school)
   {
     cout << "Name: " << school.name << ", Address: " << school.address
