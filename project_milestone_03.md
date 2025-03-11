@@ -50,6 +50,56 @@ class SchoolBST
     return node;
   }
 
+  TreeNode* findMin(TreeNode* node)
+  {
+    while (node->left)
+    {
+      node = node->left;
+    }
+    return node;
+  }
+
+  TreeNode* deleteNode(TreeNode* node, string name)
+  {
+    if (!node) return nullptr;
+
+    if (name < node->school.name)
+    {
+      node->left = deleteNode(node->left, name);
+    }
+    else if (name > node->school.name)
+    {
+      node->right = deleteNode(node->right, name);
+    }
+    else
+    {
+      if (!node->left && !node->right)
+      {
+        delete node;
+        return nullptr;
+      }
+
+      if (!node->left)
+      {
+        TreeNode* temp = node->right;
+        delete node;
+        return temp;
+      }
+      else if (!node->right)
+      {
+        TreeNode* temp = node->left;
+        delete node;
+        return temp;
+      }
+
+      TreeNode* temp = findMin(node->right);
+      node->school = temp->school;
+      node->right = deleteNode(node->right, temp->school.name);
+    }
+    return node;
+  }
+
+
   public:
   void insert(School school)
   {
