@@ -148,6 +148,10 @@ class SchoolBST
   void deleteByName(string name)
   {
     root = deleteNode(root, name);
+    if (!root)
+    {
+      cout << "Node not found." << endl;
+    }
   }  
 
   void findByName(string name)
