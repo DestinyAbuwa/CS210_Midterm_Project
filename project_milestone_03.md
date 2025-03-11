@@ -113,6 +113,12 @@ class SchoolBST
     root = deleteNode(root, name);
   }  
 
+  void printSchool(School school)
+  {
+    cout << "Name: " << school.name << ", Address: " << school.address
+    << ", City: " << school.city << ", State: " << school.state
+    << ", County: " << school.county << endl;
+  }
 
 };
 
