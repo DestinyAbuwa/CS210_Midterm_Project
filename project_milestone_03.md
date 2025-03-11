@@ -50,12 +50,16 @@ class SchoolBST
     return node;
   }
 
+  public:
   void insert(School school)
   {
     root = insertNode(root, school);
   }
 
-
+  void deleteByName(string name)
+  {
+    root = deleteNode(root, name);
+  }  
 
 
 };
