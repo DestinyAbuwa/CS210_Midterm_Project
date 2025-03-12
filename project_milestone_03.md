@@ -219,5 +219,55 @@ void CSVReader(SchoolBST& bst, const string& filename)
   file.close();
 }
 
+int main()
+{
+  SchoolBST bst;
+  CSVReader(bst, "Illinois_Peoria_Schools.csv");
+
+  char choice;
+  string name;
+  do
+  {
+    cout << "\nMenu:\na) Search School\nb) Delete School\nc) Display Schools by InOrder\nd) Display Schools by PreOrder\ne) Display Schools by PostOrder\nf) Exit\nChoice: ";
+    cin >> choice;
+    cin.ignore();
+    switch (choice)
+    {
+      case 'a':
+          cout << "Enter school name to search: ";
+          getline(cin, name);
+          bst.findByName(name);
+      break;
+
+      case 'b':
+          cout << "Enter school name to delete: ";
+          getline(cin, name);
+          bst.deleteByName(name);
+      break;
+
+      case 'c':
+          bst.displayInOrder();
+      break;
+
+      case 'd':
+          bst.displayPreOrder();
+      break;
+
+      case 'e':
+          bst.displayPostOrder();
+      break;
+
+      case 'f':
+          cout << "Exiting...\n";
+      break;
+
+      default:
+          cout << "Invalid choice!\n";
+    }
+  }
+  while (choice != 'f');
+
+  return 0;
+}
 
 
