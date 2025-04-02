@@ -155,8 +155,17 @@ public:
     }
 
     // Find a school by name
-    School* findByName(string name) {
-        
+    School* findByName(string name)
+    {
+      int index = hashFunction(name);
+      for (auto &school : table[index])
+      {
+        if (school.name == name)
+        {
+          return &school;
+        }
+      }
+      return nullptr;
     }
 
     // Display all schools in the hash table
