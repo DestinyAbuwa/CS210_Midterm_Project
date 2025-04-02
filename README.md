@@ -23,7 +23,7 @@ struct School
 class SchoolList
 {
   private:
-    School* head;
+      School* head;
 
   public:
       SchoolList() : head(nullptr) {}
@@ -109,28 +109,32 @@ class SchoolList
 
 class SchoolHashTable
 {
-    private:
+  private:
     static const int TABLE_SIZE = 100;
     vector<list<School>> table;
 
     // Hash function: Modulo Hashing
     int hashFunction(string key)
     {
-        int hash = 0;
-        for (char ch : key)
-        {
-            hash += ch;
-        }
-        return hash % TABLE_SIZE;
+      int hash = 0;
+      for (char ch : key)
+      {
+        hash += ch;
+      }
+      return hash % TABLE_SIZE;
     }
 
-    SchoolHashTable() {
-        
+public:
+    SchoolHashTable()
+    {
+      table.resize(TABLE_SIZE);
     }
 
     // Insert a school into the hash table
-    void insert(School school) {
-        
+    void insert(School school)
+    {
+      int index = hashFunction(school.name);
+      table[index].push_back(school);
     }
 
     // Delete a school by name
