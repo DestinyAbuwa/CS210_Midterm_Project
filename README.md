@@ -107,6 +107,34 @@ class SchoolList
       }
 };
 
+class SchoolHashTable {
+
+    SchoolHashTable() {
+        
+    }
+
+    // Insert a school into the hash table
+    void insert(School school) {
+        
+    }
+
+    // Delete a school by name
+    void deleteByName(string name) {
+        
+    }
+
+    // Find a school by name
+    School* findByName(string name) {
+        
+    }
+
+    // Display all schools in the hash table
+    void display() {
+        
+    }
+};
+
+
 void CSVReader(SchoolList& list, const string& filename)
 {
   ifstream file(filename);
