@@ -178,7 +178,7 @@ public:
           cout << "Index " << i << ": ";
           for (const auto &school : table[i])
           {
-            cout << "(" << school.name << ", " << school.city << ", " << school.students << ") ";
+            cout << "(" << school.name << ", " << school.address << ", " << school.city << ", " << school.state << ", " << school.county << ") ";
           }
           cout << endl;
         }
@@ -186,6 +186,26 @@ public:
     }
 };
 
+// Function to load data from CSV file for hashtable
+void loadFromCSV(SchoolHashTable &hashTable, const string &filename) {
+    ifstream file(filename);
+    if (!file) {
+        cerr << "Error opening file!" << endl;
+        return;
+    }
+    string line;
+    while (getline(file, line)) {
+        stringstream ss(line);
+        string name, address, city, state, county;
+        getline(ss, name, ',');
+        getline(ss, address, ',');
+        getline(ss, city, ',');
+        getline(ss, state, ',');
+        getline(ss, county, ',');
+        hashTable.insert(School(name, address, city, state, county));
+    }
+    file.close();
+}
 
 void CSVReader(SchoolList& list, const string& filename)
 {
