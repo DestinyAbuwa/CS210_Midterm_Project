@@ -169,8 +169,20 @@ public:
     }
 
     // Display all schools in the hash table
-    void display() {
-        
+    void display()
+    {
+      for (int i = 0; i < TABLE_SIZE; i++)
+      {
+        if (!table[i].empty())
+        {
+          cout << "Index " << i << ": ";
+          for (const auto &school : table[i])
+          {
+            cout << "(" << school.name << ", " << school.city << ", " << school.students << ") ";
+          }
+          cout << endl;
+        }
+      }
     }
 };
 
