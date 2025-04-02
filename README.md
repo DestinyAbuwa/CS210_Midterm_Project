@@ -115,15 +115,17 @@ class SchoolHashTable
     static const int TABLE_SIZE = 100;
     vector<list<School>> table;
 
-    // Hash function: Modulo Hashing
-    int hashFunction(string key)
-    {
-      int hash = 0;
+    // Hash function: Polynomial Rolling Hash
+    int polynomialHash(string key, int tableSize, int prime = 31)
+    { 
+      long hash = 0;
+      long power = 1;
       for (char ch : key)
       {
-        hash += ch;
+        hash = (hash + (ch - 'a' + 1) * power) % tableSize;
+        power = (power * prime) % tableSize;
       }
-      return hash % TABLE_SIZE;
+      return hash % tableSize;
     }
 
 public:
@@ -135,14 +137,14 @@ public:
     // Insert a school into the hash table
     void insert(School school)
     {
-      int index = hashFunction(school.name);
+      int index = polynomialHash(school.name, TABLE_SIZE);
       table[index].push_back(school);
     }
 
     // Delete a school by name
     void deleteByName(string name)
     {
-      int index = hashFunction(name);
+      int index = polynomialHash(name, TABLE_SIZE);
       auto &chain = table[index];
       for (auto it = chain.begin(); it != chain.end(); ++it)
       {
@@ -159,7 +161,7 @@ public:
     // Find a school by name
     School* findByName(string name)
     {
-      int index = hashFunction(name);
+      int index = polynomialHash(name, TABLE_SIZE);
       for (auto &school : table[index])
       {
         if (school.name == name)
