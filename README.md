@@ -138,8 +138,20 @@ public:
     }
 
     // Delete a school by name
-    void deleteByName(string name) {
-        
+    void deleteByName(string name)
+    {
+      int index = hashFunction(name);
+      auto &chain = table[index];
+      for (auto it = chain.begin(); it != chain.end(); ++it)
+      {
+        if (it->name == name)
+        {
+          chain.erase(it);
+          cout << "Deleted school: " << name << endl;
+          return;
+        }
+      }
+      cout << "School not found!" << endl;
     }
 
     // Find a school by name
