@@ -107,7 +107,22 @@ class SchoolList
       }
 };
 
-class SchoolHashTable {
+class SchoolHashTable
+{
+    private:
+    static const int TABLE_SIZE = 100;
+    vector<list<School>> table;
+
+    // Hash function: Modulo Hashing
+    int hashFunction(string key)
+    {
+        int hash = 0;
+        for (char ch : key)
+        {
+            hash += ch;
+        }
+        return hash % TABLE_SIZE;
+    }
 
     SchoolHashTable() {
         
