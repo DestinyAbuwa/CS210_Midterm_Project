@@ -446,8 +446,20 @@ void CSVReaderHash(SchoolHashTable &hashTable, const string &filename)
 
 int main()
 {
+    Timer t;
+    string s = "runtime_analysis.csv";
+    ofstream outfile(s);
+    if (!outfile.is_open())
+    {
+        cerr << "Failed to open runtime_analysis.csv for writing.\n";
+        return 1;
+    }
 
 
-  return 0;
+
+
+
+
+    return 0;
 }
 
