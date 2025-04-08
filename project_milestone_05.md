@@ -456,7 +456,26 @@ int main()
     }
     outfile << "List/BST/HashTable, Operation, Dataset, Time taken (microseconds)\n";
 
+    SchoolList list1;
+    SchoolList list2;
+    SchoolList list3;
+    double timeElapsed_insert_list1 = t.time_function(CSVReaderList, list1, "Illinois_Peoria_Schools.csv");
+    double timeElapsed_insert_list2 = t.time_function(CSVReaderList, list2, "Illinois_Schools.csv");
+    double timeElapsed_insert_list3 = t.time_function(CSVReaderList, list3, "USA_Schools.csv");
 
+    SchoolBST bst1;
+    SchoolBST bst2;
+    SchoolBST bst3;
+    double timeElapsed_insert_bst1 = t.time_function(CSVReaderBST, bst1, "Illinois_Peoria_Schools.csv");
+    double timeElapsed_insert_bst2 = t.time_function(CSVReaderBST, bst2, "Illinois_Schools.csv");
+    double timeElapsed_insert_bst3 = t.time_function(CSVReaderBST, bst3, "USA_Schools.csv");
+
+    SchoolHashTable hash1;
+    SchoolHashTable hash2;
+    SchoolHashTable hash3;
+    double timeElapsed_insert_hash1 = t.time_function(CSVReaderHash, hash1, "Illinois_Peoria_Schools.csv");
+    double timeElapsed_insert_hash2 = t.time_function(CSVReaderHash, hash2, "Illinois_Schools.csv");
+    double timeElapsed_insert_hash3 = t.time_function(CSVReaderHash, hash3, "USA_Schools.csv");
 
 
 
