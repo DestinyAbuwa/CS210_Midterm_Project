@@ -454,7 +454,7 @@ int main()
         cerr << "Failed to open runtime_analysis.csv for writing.\n";
         return 1;
     }
-
+    outfile << "List/BST/HashTable, Operation, Dataset, Time taken (microseconds)\n";
 
 
 
