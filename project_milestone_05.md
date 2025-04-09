@@ -468,6 +468,31 @@ void testDeletionHash(SchoolHashTable& hash)
     hash.deleteByName("KNOXVILLE CNTR STUDENT SUCCESS");
 }
 
+void testSearchList(SchoolList& list)
+{
+    list.findByName("KELLAR PRIMARY SCHOOL");
+    list.findByName("FRANKLIN PRIMARY SCHOOL");
+    list.findByName("PLEASANT VALLEY MIDDLE SCHOOL");
+    list.findByName("ROLLING ACRES MIDDLE SCHOOL");
+    list.findByName("KNOXVILLE CNTR STUDENT SUCCESS");
+}
+void testSearchBST(SchoolBST& bst)
+{
+    bst.findByName("KELLAR PRIMARY SCHOOL");
+    bst.findByName("FRANKLIN PRIMARY SCHOOL");
+    bst.findByName("PLEASANT VALLEY MIDDLE SCHOOL");
+    bst.findByName("ROLLING ACRES MIDDLE SCHOOL");
+    bst.findByName("KNOXVILLE CNTR STUDENT SUCCESS");
+}
+void testSearchHash(SchoolHashTable& hash)
+{
+    hash.findByName("KELLAR PRIMARY SCHOOL");
+    hash.findByName("FRANKLIN PRIMARY SCHOOL");
+    hash.findByName("PLEASANT VALLEY MIDDLE SCHOOL");
+    hash.findByName("ROLLING ACRES MIDDLE SCHOOL");
+    hash.findByName("KNOXVILLE CNTR STUDENT SUCCESS");
+}
+
 
 int main()
 {
@@ -487,6 +512,11 @@ int main()
     double timeElapsed_insert_list1 = t.time_function(CSVReaderList, list1, "Illinois_Peoria_Schools.csv");
     double timeElapsed_insert_list2 = t.time_function(CSVReaderList, list2, "Illinois_Schools.csv");
     double timeElapsed_insert_list3 = t.time_function(CSVReaderList, list3, "USA_Schools.csv");
+
+    double timeElapsed_search_list1 = t.time_function(testSearchList, list1);
+    double timeElapsed_search_list2 = t.time_function(testSearchList, list2);
+    double timeElapsed_search_list3 = t.time_function(testSearchList, list3);
+
     double timeElapsed_delete_list1 = t.time_function(testDeletionList, list1);
     double timeElapsed_delete_list2 = t.time_function(testDeletionList, list2);
     double timeElapsed_delete_list3 = t.time_function(testDeletionList, list3);
@@ -497,6 +527,11 @@ int main()
     double timeElapsed_insert_bst1 = t.time_function(CSVReaderBST, bst1, "Illinois_Peoria_Schools.csv");
     double timeElapsed_insert_bst2 = t.time_function(CSVReaderBST, bst2, "Illinois_Schools.csv");
     double timeElapsed_insert_bst3 = t.time_function(CSVReaderBST, bst3, "USA_Schools.csv");
+
+    double timeElapsed_search_bst1 = t.time_function(testSearchBST, bst1);
+    double timeElapsed_search_bst2 = t.time_function(testSearchBST, bst2);
+    double timeElapsed_search_bst3 = t.time_function(testSearchBST, bst3);
+
     double timeElapsed_delete_bst1 = t.time_function(testDeletionBST, bst1);
     double timeElapsed_delete_bst2 = t.time_function(testDeletionBST, bst2);
     double timeElapsed_delete_bst3 = t.time_function(testDeletionBST, bst3);
@@ -507,6 +542,11 @@ int main()
     double timeElapsed_insert_hash1 = t.time_function(CSVReaderHash, hash1, "Illinois_Peoria_Schools.csv");
     double timeElapsed_insert_hash2 = t.time_function(CSVReaderHash, hash2, "Illinois_Schools.csv");
     double timeElapsed_insert_hash3 = t.time_function(CSVReaderHash, hash3, "USA_Schools.csv");
+
+    double timeElapsed_search_hash1 = t.time_function(testSearchHash, hash1);
+    double timeElapsed_search_hash2 = t.time_function(testSearchHash, hash2);
+    double timeElapsed_search_hash3 = t.time_function(testSearchHash, hash3);
+
     double timeElapsed_delete_hash1 = t.time_function(testDeletionHash, hash1);
     double timeElapsed_delete_hash2 = t.time_function(testDeletionHash, hash2);
     double timeElapsed_delete_hash3 = t.time_function(testDeletionHash, hash3);
