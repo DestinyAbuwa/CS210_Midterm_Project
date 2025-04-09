@@ -445,52 +445,83 @@ void CSVReaderHash(SchoolHashTable &hashTable, const string &filename)
 
 void testDeletionList(SchoolList& list)
 {
-    list.deleteByName("KELLAR PRIMARY SCHOOL");
-    list.deleteByName("FRANKLIN PRIMARY SCHOOL");
-    list.deleteByName("PLEASANT VALLEY MIDDLE SCHOOL");
-    list.deleteByName("ROLLING ACRES MIDDLE SCHOOL");
-    list.deleteByName("KNOXVILLE CNTR STUDENT SUCCESS");
+    list.deleteByName("GLEN OAK COMM LEARNING CNTR");
+    list.deleteByName("ROBERT A JAMIESON SCHOOL");
+    list.deleteByName("HARRISON COMM LEARNING CNTR");
+    list.deleteByName("ELMWOOD ELEM SCHOOL");
+    list.deleteByName("PLEASANT HILL ELEM SCHOOL");
+    list.deleteByName("PEORIA HEIGHTS HIGH SCHOOL");
+    list.deleteByName("DUNLAP VALLEY MIDDLE SCHOOL");
+    list.deleteByName("BRIMFIELD GRADE SCHOOL");
+    list.deleteByName("PEORIA REGIONAL HIGH SCHOOL");
+    list.deleteByName("PEORIA HEIGHTS GRADE SCHOOL");
+    
 }
 void testDeletionBST(SchoolBST& bst)
 {
-    bst.deleteByName("KELLAR PRIMARY SCHOOL");
-    bst.deleteByName("FRANKLIN PRIMARY SCHOOL");
-    bst.deleteByName("PLEASANT VALLEY MIDDLE SCHOOL");
-    bst.deleteByName("ROLLING ACRES MIDDLE SCHOOL");
-    bst.deleteByName("KNOXVILLE CNTR STUDENT SUCCESS");
+    bst.deleteByName("GLEN OAK COMM LEARNING CNTR");
+    bst.deleteByName("ROBERT A JAMIESON SCHOOL");
+    bst.deleteByName("HARRISON COMM LEARNING CNTR");
+    bst.deleteByName("ELMWOOD ELEM SCHOOL");
+    bst.deleteByName("PLEASANT HILL ELEM SCHOOL");
+    bst.deleteByName("PEORIA HEIGHTS HIGH SCHOOL");
+    bst.deleteByName("DUNLAP VALLEY MIDDLE SCHOOL");
+    bst.deleteByName("BRIMFIELD GRADE SCHOOL");
+    bst.deleteByName("PEORIA REGIONAL HIGH SCHOOL");
+    bst.deleteByName("PEORIA HEIGHTS GRADE SCHOOL");
 }
 void testDeletionHash(SchoolHashTable& hash)
 {
-    hash.deleteByName("KELLAR PRIMARY SCHOOL");
-    hash.deleteByName("FRANKLIN PRIMARY SCHOOL");
-    hash.deleteByName("PLEASANT VALLEY MIDDLE SCHOOL");
-    hash.deleteByName("ROLLING ACRES MIDDLE SCHOOL");
-    hash.deleteByName("KNOXVILLE CNTR STUDENT SUCCESS");
+    hash.deleteByName("GLEN OAK COMM LEARNING CNTR");
+    hash.deleteByName("ROBERT A JAMIESON SCHOOL");
+    hash.deleteByName("HARRISON COMM LEARNING CNTR");
+    hash.deleteByName("ELMWOOD ELEM SCHOOL");
+    hash.deleteByName("PLEASANT HILL ELEM SCHOOL");
+    hash.deleteByName("PEORIA HEIGHTS HIGH SCHOOL");
+    hash.deleteByName("DUNLAP VALLEY MIDDLE SCHOOL");
+    hash.deleteByName("BRIMFIELD GRADE SCHOOL");
+    hash.deleteByName("PEORIA REGIONAL HIGH SCHOOL");
+    hash.deleteByName("PEORIA HEIGHTS GRADE SCHOOL");
 }
 
 void testSearchList(SchoolList& list)
 {
-    list.findByName("KELLAR PRIMARY SCHOOL");
-    list.findByName("FRANKLIN PRIMARY SCHOOL");
-    list.findByName("PLEASANT VALLEY MIDDLE SCHOOL");
-    list.findByName("ROLLING ACRES MIDDLE SCHOOL");
-    list.findByName("KNOXVILLE CNTR STUDENT SUCCESS");
+    list.findByName("GLEN OAK COMM LEARNING CNTR");
+    list.findByName("ROBERT A JAMIESON SCHOOL");
+    list.findByName("HARRISON COMM LEARNING CNTR");
+    list.findByName("ELMWOOD ELEM SCHOOL");
+    list.findByName("PLEASANT HILL ELEM SCHOOL");
+    list.findByName("PEORIA HEIGHTS HIGH SCHOOL");
+    list.findByName("DUNLAP VALLEY MIDDLE SCHOOL");
+    list.findByName("BRIMFIELD GRADE SCHOOL");
+    list.findByName("PEORIA REGIONAL HIGH SCHOOL");
+    list.findByName("PEORIA HEIGHTS GRADE SCHOOL");
 }
 void testSearchBST(SchoolBST& bst)
 {
-    bst.findByName("KELLAR PRIMARY SCHOOL");
-    bst.findByName("FRANKLIN PRIMARY SCHOOL");
-    bst.findByName("PLEASANT VALLEY MIDDLE SCHOOL");
-    bst.findByName("ROLLING ACRES MIDDLE SCHOOL");
-    bst.findByName("KNOXVILLE CNTR STUDENT SUCCESS");
+    bst.findByName("GLEN OAK COMM LEARNING CNTR");
+    bst.findByName("ROBERT A JAMIESON SCHOOL");
+    bst.findByName("HARRISON COMM LEARNING CNTR");
+    bst.findByName("ELMWOOD ELEM SCHOOL");
+    bst.findByName("PLEASANT HILL ELEM SCHOOL");
+    bst.findByName("PEORIA HEIGHTS HIGH SCHOOL");
+    bst.findByName("DUNLAP VALLEY MIDDLE SCHOOL");
+    bst.findByName("BRIMFIELD GRADE SCHOOL");
+    bst.findByName("PEORIA REGIONAL HIGH SCHOOL");
+    bst.findByName("PEORIA HEIGHTS GRADE SCHOOL");
 }
 void testSearchHash(SchoolHashTable& hash)
 {
-    hash.findByName("KELLAR PRIMARY SCHOOL");
-    hash.findByName("FRANKLIN PRIMARY SCHOOL");
-    hash.findByName("PLEASANT VALLEY MIDDLE SCHOOL");
-    hash.findByName("ROLLING ACRES MIDDLE SCHOOL");
-    hash.findByName("KNOXVILLE CNTR STUDENT SUCCESS");
+    hash.findByName("GLEN OAK COMM LEARNING CNTR");
+    hash.findByName("ROBERT A JAMIESON SCHOOL");
+    hash.findByName("HARRISON COMM LEARNING CNTR");
+    hash.findByName("ELMWOOD ELEM SCHOOL");
+    hash.findByName("PLEASANT HILL ELEM SCHOOL");
+    hash.findByName("PEORIA HEIGHTS HIGH SCHOOL");
+    hash.findByName("DUNLAP VALLEY MIDDLE SCHOOL");
+    hash.findByName("BRIMFIELD GRADE SCHOOL");
+    hash.findByName("PEORIA REGIONAL HIGH SCHOOL");
+    hash.findByName("PEORIA HEIGHTS GRADE SCHOOL");
 }
 
 
