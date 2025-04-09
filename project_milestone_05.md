@@ -504,52 +504,86 @@ int main()
         cerr << "Failed to open runtime_analysis.csv for writing.\n";
         return 1;
     }
-    outfile << "List/BST/HashTable, Operation, Dataset, Time taken (microseconds)\n";
+    outfile << "List/BST/Hash, Operation, Dataset, Time taken (microseconds)\n";
 
     SchoolList list1;
     SchoolList list2;
     SchoolList list3;
+
     double timeElapsed_insert_list1 = t.time_function(CSVReaderList, list1, "Illinois_Peoria_Schools.csv");
+    outfile << "List, Insertion, Illinois_Peoria_Schools.csv, " << timeElapsed_insert_list1 << endl;
     double timeElapsed_insert_list2 = t.time_function(CSVReaderList, list2, "Illinois_Schools.csv");
+    outfile << "List, Insertion, Illinois_Schools.csv, " << timeElapsed_insert_list2 << endl;
     double timeElapsed_insert_list3 = t.time_function(CSVReaderList, list3, "USA_Schools.csv");
+    outfile << "List, Insertion, USA_Schools.csv, " << timeElapsed_insert_list3 << endl;
 
     double timeElapsed_search_list1 = t.time_function(testSearchList, list1);
+    outfile << "List, Searching, Illinois_Peoria_Schools.csv, " << timeElapsed_search_list1 << endl;
     double timeElapsed_search_list2 = t.time_function(testSearchList, list2);
+    outfile << "List, Searching, Illinois_Schools.csv, " << timeElapsed_search_list2 << endl;
     double timeElapsed_search_list3 = t.time_function(testSearchList, list3);
+    outfile << "List, Searching, USA_Schools.csv, " << timeElapsed_search_list3 << endl;
 
     double timeElapsed_delete_list1 = t.time_function(testDeletionList, list1);
+    outfile << "List, Deletion, Illinois_Peoria_Schools.csv, " << timeElapsed_delete_list1 << endl;
     double timeElapsed_delete_list2 = t.time_function(testDeletionList, list2);
+    outfile << "List, Deletion, Illinois_Schools.csv, " << timeElapsed_delete_list2 << endl;
     double timeElapsed_delete_list3 = t.time_function(testDeletionList, list3);
+    outfile << "List, Deletion, USA_Schools.csv, " << timeElapsed_delete_list3 << endl;
+
+
 
     SchoolBST bst1;
     SchoolBST bst2;
     SchoolBST bst3;
+
     double timeElapsed_insert_bst1 = t.time_function(CSVReaderBST, bst1, "Illinois_Peoria_Schools.csv");
+    outfile << "BST, Insertion, Illinois_Peoria_Schools.csv, " << timeElapsed_insert_bst1 << endl;
     double timeElapsed_insert_bst2 = t.time_function(CSVReaderBST, bst2, "Illinois_Schools.csv");
+    outfile << "BST, Insertion, IIllinois_Schools.csv, " << timeElapsed_insert_bst2 << endl;
     double timeElapsed_insert_bst3 = t.time_function(CSVReaderBST, bst3, "USA_Schools.csv");
+    outfile << "BST, Insertion, USA_Schools.csv, " << timeElapsed_insert_bst3 << endl;
 
     double timeElapsed_search_bst1 = t.time_function(testSearchBST, bst1);
+    outfile << "BST, Searching, Illinois_Peoria_Schools.csv, " << timeElapsed_search_bst1 << endl;
     double timeElapsed_search_bst2 = t.time_function(testSearchBST, bst2);
+    outfile << "BST, Searching, IIllinois_Schools.csv, " << timeElapsed_search_bst2 << endl;
     double timeElapsed_search_bst3 = t.time_function(testSearchBST, bst3);
+    outfile << "BST, Searching, USA_Schools.csv, " << timeElapsed_search_bst3 << endl;
 
     double timeElapsed_delete_bst1 = t.time_function(testDeletionBST, bst1);
+    outfile << "BST, Deletion, Illinois_Peoria_Schools.csv, " << timeElapsed_delete_bst1 << endl;
     double timeElapsed_delete_bst2 = t.time_function(testDeletionBST, bst2);
+    outfile << "BST, Deletion, IIllinois_Schools.csv, " << timeElapsed_delete_bst2 << endl;
     double timeElapsed_delete_bst3 = t.time_function(testDeletionBST, bst3);
+    outfile << "BST, Deletion, USA_Schools.csv, " << timeElapsed_delete_bst3 << endl;
+
+
 
     SchoolHashTable hash1;
     SchoolHashTable hash2;
     SchoolHashTable hash3;
+
     double timeElapsed_insert_hash1 = t.time_function(CSVReaderHash, hash1, "Illinois_Peoria_Schools.csv");
+    outfile << "Hash, Insertion, Illinois_Peoria_Schools.csv, " << timeElapsed_insert_hash1 << endl;
     double timeElapsed_insert_hash2 = t.time_function(CSVReaderHash, hash2, "Illinois_Schools.csv");
+    outfile << "Hash, Insertion, IIllinois_Schools.csv, " << timeElapsed_insert_hash2 << endl;
     double timeElapsed_insert_hash3 = t.time_function(CSVReaderHash, hash3, "USA_Schools.csv");
+    outfile << "Hash, Insertion, USA_Schools.csv, " << timeElapsed_insert_hash3 << endl;
 
     double timeElapsed_search_hash1 = t.time_function(testSearchHash, hash1);
+    outfile << "Hash, Searching, Illinois_Peoria_Schools.csv, " << timeElapsed_search_hash1 << endl;
     double timeElapsed_search_hash2 = t.time_function(testSearchHash, hash2);
+    outfile << "Hash, Searching, IIllinois_Schools.csv, " << timeElapsed_search_hash2 << endl;
     double timeElapsed_search_hash3 = t.time_function(testSearchHash, hash3);
+    outfile << "Hash, Searching, USA_Schools.csv, " << timeElapsed_search_hash3 << endl;
 
     double timeElapsed_delete_hash1 = t.time_function(testDeletionHash, hash1);
+    outfile << "Hash, Deletion, Illinois_Peoria_Schools.csv, " << timeElapsed_delete_hash1 << endl;
     double timeElapsed_delete_hash2 = t.time_function(testDeletionHash, hash2);
+    outfile << "Hash, Deletion, IIllinois_Schools.csv, " << timeElapsed_delete_hash2 << endl;
     double timeElapsed_delete_hash3 = t.time_function(testDeletionHash, hash3);
+    outfile << "Hash, Deletion, USA_Schools.csv, " << timeElapsed_delete_hash3 << endl;
 
 
 
